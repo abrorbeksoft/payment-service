@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package genproto;
+option go_package="genproto/payment_proto";
+
+
+message CreatePayment {
+  string userId=1;
+  int64 amount=2;
+  string type=3;
+}
+
+message GetPaymentRequest {
+  string id=1;
+}
+
+message GetPaymentResponse {
+  string id=1;
+  string userId=2;
+  int64 amount=3;
+  string type=4;
+  string created_at=5;
+  string updated_at=6;
+}
+
+message MonthlyPayments {
+  repeated GetPaymentResponse all=1;
+}
+
+message OptionalParams {
+
+}

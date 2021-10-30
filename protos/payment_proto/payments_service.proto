@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package genproto;
+option go_package="genproto/payment_proto";
+
+import "payments.proto";
+
+service PaymentService {
+  rpc GetPayment(GetPaymentRequest) returns (GetPaymentResponse) {}
+  rpc GetMothly(OptionalParams) returns (MonthlyPayments) {}
+}

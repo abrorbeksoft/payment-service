@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package genproto;
+option go_package="genproto/auth_service";
+
+message FindOneRequest {
+  string id = 1;
+}
+message FindOneResponse {
+  string id=1;
+  string name=2;
+  string surname=3;
+  string login=4;
+  string created_at=5;
+  string updated_at=6;
+}
+
+message GetAllResponse {
+  int32 count=1;
+  repeated FindOneResponse users=2;
+}
+
+message RegisterRequest {
+  string name=1;
+  string surname=2;
+  string login=3;
+  string password=4;
+}
+
+message RegisterResponse {
+  string id=1;
+}
